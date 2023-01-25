@@ -10,6 +10,8 @@
 .svn/
 migrate_working_dir/
 .assets/
+*.jpeg
+*.png
 # IntelliJ related
 *.iml
 *.ipr
