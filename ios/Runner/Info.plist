@@ -55,7 +55,8 @@
 	    <true/>
 	    <key>NSAppleMusicUsageDescription</key>
 	    <string>음악을 재생하는 권한이 필요합니다</string>
-
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>갤러리 권한을 허가해주세요</string>
 	</dict>
 </dict>
 </plist>
