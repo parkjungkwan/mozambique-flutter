@@ -12,7 +12,7 @@ class CounterScreen extends StatelessWidget {
       child: Consumer<CounterProvider>(
         builder: (context, counterProvider, child) => Text(
           Provider.of<CounterProvider>(context).count.toString(),
-          style: TextStyle(fontSize: 60),
+          style: const TextStyle(fontSize: 60),
         ),
       )
     );

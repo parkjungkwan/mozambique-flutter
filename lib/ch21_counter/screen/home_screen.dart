@@ -18,8 +18,8 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          IconButton(onPressed: () => _counterProvider.increase(), icon: Icon(Icons.add)),
-          IconButton(onPressed: () => _counterProvider.decrease(), icon: Icon(Icons.remove)),
+          IconButton(onPressed: () => _counterProvider.increase(), icon: Icon(Icons.add, size: 50,)),
+          IconButton(onPressed: () => _counterProvider.decrease(), icon: Icon(Icons.remove, size: 50)),
         ],
       ),
     );

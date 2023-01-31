@@ -1,7 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hello_flutter2/ch21_counter/provider/counter_provider.dart';
 import 'package:hello_flutter2/ch21_counter/screen/home_screen.dart';
+import 'package:provider/provider.dart';
 
 void main(){
-  runApp(MaterialApp(home: HomeScreen()));
+  runApp(const App());
 }
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ChangeNotifierProvider(
+        create: (_) => CounterProvider(),
+        child: HomeScreen(),
+      ),
+    );
+  }
+}
+
