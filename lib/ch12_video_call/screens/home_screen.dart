@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch12_video_call/screen/cam_screen.dart';
+import 'package:hello_flutter2/ch12_video_call/screens/cam_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

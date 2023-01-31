@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch21_counter/provider/counter_provider.dart';
-import 'package:hello_flutter2/ch21_counter/screen/counter_screen.dart';
+import 'package:hello_flutter2/ch21_counter/providers/counter_provider.dart';
+import 'package:hello_flutter2/ch21_counter/components/counter.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {

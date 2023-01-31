@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/screen/debug_page.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/screen/main_page.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/screens/debug_page.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/screens/main_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

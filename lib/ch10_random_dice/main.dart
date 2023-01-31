@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch10_random_dice/screen/home_screen.dart';
-import 'package:hello_flutter2/ch10_random_dice/const/colors.dart';
+import 'package:hello_flutter2/ch10_random_dice/constants/colors.dart';
 import 'package:hello_flutter2/ch10_random_dice/screen/root_screen.dart';
 
 void main() {

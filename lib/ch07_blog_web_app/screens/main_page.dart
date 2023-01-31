@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/screen/api_list.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/screens/api_list.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

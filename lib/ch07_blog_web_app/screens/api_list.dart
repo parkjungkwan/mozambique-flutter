@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:hello_flutter2/ch07_blog_web_app/service/custom_token_manager.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/screen/message_template.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/model/api_item.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/model/picker_item.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/screen/friend_page.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/screens/message_template.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/models/api_item.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/models/picker_item.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/screens/friend_page.dart';
 import 'package:hello_flutter2/ch07_blog_web_app/service/log.dart';
 import 'package:path_provider/path_provider.dart';
 

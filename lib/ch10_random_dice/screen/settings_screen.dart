@@ -1,4 +1,4 @@
-import 'package:hello_flutter2/ch10_random_dice/const/colors.dart';
+import 'package:hello_flutter2/ch10_random_dice/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {

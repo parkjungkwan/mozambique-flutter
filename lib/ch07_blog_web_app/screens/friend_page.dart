@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch07_blog_web_app/model/picker_item.dart';
+import 'package:hello_flutter2/ch07_blog_web_app/models/picker_item.dart';
 
 class FriendPage extends StatefulWidget {
   final List<PickerItem> items;

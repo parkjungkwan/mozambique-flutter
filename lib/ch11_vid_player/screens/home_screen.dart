@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:hello_flutter2/ch11_vid_player/component/custom_video_player.dart';
+import 'package:hello_flutter2/ch11_vid_player/components/custom_video_player.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

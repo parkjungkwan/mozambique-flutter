@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
-import 'package:hello_flutter2/ch11_vid_player/component/custom_icon_button.dart';
+import 'package:hello_flutter2/ch11_vid_player/components/custom_icon_button.dart';
 
 // ➊ 동영상 위젯 생성
 class CustomVideoPlayer extends StatefulWidget {

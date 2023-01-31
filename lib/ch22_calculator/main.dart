@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch21_counter/providers/counter_provider.dart';
-import 'package:hello_flutter2/ch21_counter/screens/home_screen.dart';
+import 'package:hello_flutter2/ch22_calculator/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
 void main(){
@@ -15,10 +14,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: ChangeNotifierProvider(
-        create: (_) => CounterProvider(),
+        create: (_)=>null,
         child: HomeScreen(),
       ),
     );
   }
 }
-
