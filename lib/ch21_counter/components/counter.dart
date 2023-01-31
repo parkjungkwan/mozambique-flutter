@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:hello_flutter2/ch21_counter/providers/counter_provider.dart';
 
-class CounterScreen extends StatelessWidget {
-  const CounterScreen({Key? key}) : super(key: key);
+class Counter extends StatelessWidget {
+  const Counter({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(

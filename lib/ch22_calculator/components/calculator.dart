@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter2/ch22_calculator/components/calculator_button.dart';
 
-class CalculatorScreen extends StatelessWidget {
+class Calculator extends StatelessWidget {
 
   late String titleAdd;
   late String titleSub;
   late String titleMul;
   late String titleDiv;
 
-  CalculatorScreen({
+  Calculator({
     required Key key,
     titleAdd,
     titleSub,
@@ -17,6 +18,13 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center();
+    return Expanded(child: Row(
+      children: const <Widget>[
+        CalculatorButton(text: "+"),
+        CalculatorButton(text: "-"),
+        CalculatorButton(text: "*"),
+        CalculatorButton(text: "/"),
+      ],
+    ));
   }
 }

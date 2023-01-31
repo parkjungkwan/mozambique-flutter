@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("카운터", style: TextStyle(color: Colors.black, fontSize: 50.0),),
       ),
-      body: const CounterScreen(),
+      body: const Counter(),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
