@@ -1,3 +1,5 @@
+## 다트에는 JIT(Just-In-Tim) 및 AOT(Ahead-Of-Time) 컴파일러 두종류로 작동한다.
+#### https://www.ciokorea.com/news/243539#csidxedf32e53e03e801a1cc1649565c003b
 ## 소스코드 출처: 코드팩토리의 플러터 프로그래밍
 #### https://github.com/codefactory-co/golden-rabbit-flutter-novice
 #### 위젯은 플러터의 객체이다.
