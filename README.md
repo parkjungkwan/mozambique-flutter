@@ -68,5 +68,8 @@
 #### 이를 위해, snapshot.hasData 를 사용해서 로딩상태를 인지한다.
 #### 355, 뒤로가기는 pop() 을 사용해서 구현한다.
 
+#### 530, ChangeNotifier 클래스를 상속하면 Provider로 상태관리를 할 수 있다.
+#### 상태관리는 Getter, Setter, 상태값 로직을 뜻한다.
+
 
 
