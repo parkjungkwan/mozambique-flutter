@@ -38,9 +38,7 @@ class Button extends StatelessWidget {
         flex: isBig ? 2 : 1,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(backgroundColor: color),
-          onPressed: () {
-            () => onPressed(text);
-          },
+          onPressed: () => onPressed(text),
           child: Text(
               style: const TextStyle(
                   color: Colors.white,
