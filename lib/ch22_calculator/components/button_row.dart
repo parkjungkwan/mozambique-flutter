@@ -1,27 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hello_flutter2/ch22_calculator/components/button.dart';
 
-class Calculator extends StatelessWidget {
+class ButtonRow extends StatelessWidget {
+  final List<Button> buttons;
 
-  final String? title1;
-  final String? title2;
-  final String? title3;
-  final String? title4;
-
-  Calculator({
-    required Key key,
-    this.title1,
-    this.title2,
-    this.title3,
-    this.title4
-  }) : super(key: key);
+  const ButtonRow(this.buttons, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Row(
-      children: const <Widget>[
-        
-      ],
+    return Expanded(
+        flex: 1, // 부모의 남은 공간을 채운다
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: buttons.fold([], (list, button){
+            list.isEmpty ? list.add(button) : list.addAll([const SizedBox(width: 1,), button]) ;
+            return list;}),
     ));
   }
+
+
 }
