@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter2/ch10_random_dice/constants/colors.dart';
-import 'package:hello_flutter2/ch10_random_dice/screen/root_screen.dart';
+import 'package:hello_flutter2/ch10_random_dice/screen/random_dice.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,7 @@ void main() {
           backgroundColor: backgroundColor,    // 배경 색
         ),
       ),
-      home: RootScreen(),
+      home: const RandomDice(),
     ),
   );
 }

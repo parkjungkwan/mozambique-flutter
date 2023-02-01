@@ -1,4 +1,4 @@
-import 'package:hello_flutter2/ch09_u_and_i/screens/home_screen.dart';
+import 'package:hello_flutter2/ch09_you_and_i/screens/you_and_i.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       theme: ThemeData(  // ➊ 테마를 지정할 수 있는 클래스
           fontFamily: 'sunflower',  // 기본 글씨체
-          textTheme: TextTheme(     // ➋ 글짜 테마를 적용할 수 있는 클래스
+          textTheme: const TextTheme(     // ➋ 글짜 테마를 적용할 수 있는 클래스
             displayLarge: TextStyle(   //  headline1 스타일 정의
               color: Colors.white,  //  글 색상
               fontSize: 80.0,       //  글 크기
@@ -28,7 +28,7 @@ void main() {
             ),
           )
       ),
-      home: HomeScreen(),
+      home: YouAndI(),
     ),
   );
 }

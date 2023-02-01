@@ -1,13 +1,9 @@
 import 'package:hello_flutter2/ch10_random_dice/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class Dice extends StatelessWidget {
   final int number;
-
-  const HomeScreen({
-    required this.number,
-    Key? key,
-  }) : super(key: key);
+  const Dice({ required this.number, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         Center(
           child: Image.asset('assets/ch10_random_dice/images/$number.png'),
         ),
-        SizedBox(height: 32.0),
+        const SizedBox(height: 32.0),
         Text(
           '행운의 숫자',
           style: TextStyle(
@@ -28,10 +24,10 @@ class HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(height: 12.0),
+        const SizedBox(height: 12.0),
         Text(
           number.toString(),  // ➋ 주사위 값에 해당되는 숫자
-          style: TextStyle(
+          style: const TextStyle(
             color: primaryColor,
             fontSize: 60.0,
             fontWeight: FontWeight.w200,

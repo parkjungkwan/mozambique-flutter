@@ -3,11 +3,16 @@ import 'package:hello_flutter2/ch21_counter/providers/count_provider.dart';
 import 'package:hello_flutter2/ch21_counter/components/count.dart';
 import 'package:provider/provider.dart';
 
-class Counter extends StatelessWidget {
+class Counter extends StatefulWidget {
 
+  const Counter({super.key});
+
+  @override
+  State<Counter> createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
   late CountProvider countProvider;
-
-  Counter({super.key});
 
   @override
   Widget build(BuildContext context) {

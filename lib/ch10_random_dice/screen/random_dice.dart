@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/ch10_random_dice/screen/home_screen.dart';
-import 'package:hello_flutter2/ch10_random_dice/screen/settings_screen.dart';
+import 'package:hello_flutter2/ch10_random_dice/components/dice.dart';
+import 'package:hello_flutter2/ch10_random_dice/components/settings.dart';
 import 'dart:math';
 import 'package:shake/shake.dart';
 
-class RootScreen extends StatefulWidget {
-  const RootScreen({Key? key}) : super(key: key);
+class RandomDice extends StatefulWidget {
+
+  const RandomDice({super.key});
 
   @override
-  State<RootScreen> createState() => _RootScreenState();
+  State<RandomDice> createState() => _RandomDiceState();
+
 }
 
-class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{    // ➊
+class _RandomDiceState extends State<RandomDice> with TickerProviderStateMixin{    // ➊
   TabController? controller;  // 사용할 TabController 선언
   double threshold = 2.7;
   int number = 1;
@@ -32,7 +34,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ 
   }
 
   void onPhoneShake() {  // ➎ 감지 후 실행할 함수
-    final rand = new Random();
+    final rand = Random();
 
     setState(() {
       number = rand.nextInt(5) + 1;
@@ -65,8 +67,8 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ 
 
   List<Widget> renderChildren(){
     return [
-      HomeScreen(number: number),
-      SettingsScreen(  // 기존에 있던 Container 코드를 통째로 교체
+      Dice(number: number),
+      Settings(  // 기존에 있던 Container 코드를 통째로 교체
         threshold: threshold,
         onThresholdChange: onThresholdChange,
       ),
@@ -87,7 +89,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ 
           controller!.animateTo(index);
         });
       },
-      items: [
+      items: const [
         BottomNavigationBarItem(  // ➊ 하단 탭바의 각 버튼을 구현
           icon: Icon(
             Icons.edgesensor_high_outlined,
