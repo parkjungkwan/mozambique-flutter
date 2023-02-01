@@ -5,8 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ChoolCheck extends StatelessWidget {
   static final LatLng companyLatLng = LatLng(  // ➊ 지도 초기화 위치
-    37.5233273,  // 위도
-    126.921252,  // 경도
+    37.5706,  // 위도
+    126.9853,  // 경도
   );
   static final Marker marker = Marker(
     markerId: MarkerId('company'),
