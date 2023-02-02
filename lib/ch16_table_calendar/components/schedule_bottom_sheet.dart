@@ -118,7 +118,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     final schedules = Hive.box<Schedule>('schedules');
     String temp = const Uuid().v4();
     Logger.showToast("4 ID: $temp");
-    Schedule schedule = Schedule(temp, "test", DateTime.now(), 1, 3);
+    Schedule schedule = Schedule(temp, "aaa", DateTime.now(), 2, 6);
     schedules.put(temp,schedule);
     final Schedule? returnSchedule = schedules.get(temp);
     final String res = returnSchedule.toString();

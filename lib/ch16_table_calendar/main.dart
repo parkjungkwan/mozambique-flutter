@@ -10,7 +10,7 @@ void main() async {
   await initializeDateFormatting();
   await Hive.initFlutter();
   // 어답터 등록하기
-  //Hive.registerAdapter<Schedule>(ScheduleAdapter());
+  Hive.registerAdapter<Schedule>(ScheduleAdapter());
   final schedules = await Hive.openBox<Schedule>('schedules');
   runApp(
     MaterialApp(
