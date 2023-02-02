@@ -5,7 +5,7 @@ part 'schedule.g.dart';
 @HiveType(typeId: 0)
 class Schedule extends HiveObject{
   @HiveField(0)
-  int id;
+  String id;
   @HiveField(1)
   String content;
   @HiveField(2)
@@ -16,4 +16,9 @@ class Schedule extends HiveObject{
   int endTime;     // 종료 시간
 
   Schedule(this.id, this.content, this.date, this.startTime, this.endTime);
+
+  @override
+  String toString() {
+    return '{id: $id, content: $content, date: $date, startTime: $startTime, endTime: $endTime}';
+  }
 }

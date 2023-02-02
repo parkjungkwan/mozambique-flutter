@@ -17,7 +17,7 @@ class ScheduleAdapter extends TypeAdapter<Schedule> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Schedule(
-      fields[0] as int,
+      fields[0] as String,
       fields[1] as String,
       fields[2] as DateTime,
       fields[3] as int,

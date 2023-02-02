@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-
+import 'package:uuid/uuid.dart';
 import '../../admin/uti/logger.dart';
 import '../../admin/uti/validator.dart';
 import '../constants/colors.dart';
@@ -26,8 +28,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   late int startTime; // 시작 시간 저장 변수
   late int endTime; // 종료 시간 저장 변수
   late String content;
-
-  int? get id => null;
+  String get id => const Uuid().v4();
 
   DateTime? get selectedDate => null; // 일정 내용 저장 변수
 
@@ -87,7 +88,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     isTime: false,
                     onSaved: (String? val) {
                       // 저장이 실행되면 content 변수에 텍스트 필드 값 저장
-                      content = val!;
+                      content = "test22";
                     },
                     validator: Validator.content,
                   ),
@@ -115,11 +116,13 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   void onSavePressed() async {
     Logger.showToast("3 onSavePressed: ");
     final schedules = Hive.box<Schedule>('schedules');
-    Schedule schedule = Schedule(id!, content, selectedDate!, startTime, endTime);
-    schedules.put(12,schedule);
-    Schedule? returnSchedule = schedules.get(["id"]);
-    Logger.showToast("4 onSavePressed: ");
-    Logger.showToast("5 final: $returnSchedule.id");
+    String temp = const Uuid().v4();
+    Logger.showToast("4 ID: $temp");
+    Schedule schedule = Schedule(temp, "test", DateTime.now(), 1, 3);
+    schedules.put(temp,schedule);
+    final Schedule? returnSchedule = schedules.get(temp);
+    final String res = returnSchedule.toString();
+    Logger.showToast("5 final: $res");
       // Navigator.of(context).pop();
 
 
