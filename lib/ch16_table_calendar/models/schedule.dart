@@ -19,6 +19,6 @@ class Schedule extends HiveObject{
 
   @override
   String toString() {
-    return '{id: $id, content: $content, date: $date, startTime: $startTime, endTime: $endTime}';
+    return '{content: $content, date: $date, startTime: $startTime, endTime: $endTime}';
   }
 }

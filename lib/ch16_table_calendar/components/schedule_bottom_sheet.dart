@@ -24,18 +24,14 @@ class ScheduleBottomSheet extends StatefulWidget {
 class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
 
   final GlobalKey<FormState> formKey = GlobalKey();
-
-  late int startTime; // 시작 시간 저장 변수
-  late int endTime; // 종료 시간 저장 변수
-  late String content;
-  String get id => const Uuid().v4();
-
-  DateTime? get selectedDate => null; // 일정 내용 저장 변수
-
+  int startTime = 0; // 시작 시간 저장 변수
+  int endTime = 0; // 종료 시간 저장 변수
+  String content = "";
   @override
   Widget build(BuildContext context) {
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
     Logger.showToast("2 ScheduleBottomSheet: ");
+
     return Form(
       // ➊ 텍스트 필드를 한 번에 관리할 수 있는 폼
       key: formKey, // ➋ Form을 조작할 키값
@@ -61,6 +57,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                         onSaved: (String? val) {
                           // 저장이 실행되면 startTime 변수에 텍스트 필드 값 저장
                           startTime = int.parse(val!);
+
                         },
                         validator: Validator.time,
                       ),
@@ -88,7 +85,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     isTime: false,
                     onSaved: (String? val) {
                       // 저장이 실행되면 content 변수에 텍스트 필드 값 저장
-                      content = "test22";
+                      content = val!;
                     },
                     validator: Validator.content,
                   ),
@@ -115,10 +112,11 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
 
   void onSavePressed() async {
     Logger.showToast("3 onSavePressed: ");
+    formKey.currentState!.save();
     final schedules = Hive.box<Schedule>('schedules');
     String temp = const Uuid().v4();
     Logger.showToast("4 ID: $temp");
-    Schedule schedule = Schedule(temp, "aaa", DateTime.now(), 2, 6);
+    Schedule schedule = Schedule(temp, content!, widget.selectedDate, startTime!, endTime!);
     schedules.put(temp,schedule);
     final Schedule? returnSchedule = schedules.get(temp);
     final String res = returnSchedule.toString();
