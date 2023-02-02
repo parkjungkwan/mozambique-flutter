@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../admin/uti/logger.dart';
 import '../components/main_calendar.dart';
 import '../components/schedule_bottom_sheet.dart';
 import '../components/schedule_card.dart';
@@ -64,7 +65,9 @@ class _TableCalendarState extends State<TableCalendar> {
     );
   }
 
-  void onDaySelected(DateTime selectedDate, DateTime focusedDate){  // ➌ 날짜 선택될 때마다 실행할 함수
+  void onDaySelected(DateTime selectedDate, DateTime focusedDate){
+    // ➌ 날짜 선택될 때마다 실행할 함수
+    Logger.showToast("토스트 테스트");
     setState(() {
       this.selectedDate = selectedDate;
     });
