@@ -23,9 +23,13 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
 
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  int? startTime; // 시작 시간 저장 변수
-  int? endTime; // 종료 시간 저장 변수
-  String? content; // 일정 내용 저장 변수
+  late int startTime; // 시작 시간 저장 변수
+  late int endTime; // 종료 시간 저장 변수
+  late String content;
+
+  int? get id => null;
+
+  DateTime? get selectedDate => null; // 일정 내용 저장 변수
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +87,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     isTime: false,
                     onSaved: (String? val) {
                       // 저장이 실행되면 content 변수에 텍스트 필드 값 저장
-                      content = val;
+                      content = val!;
                     },
                     validator: Validator.content,
                   ),
@@ -110,8 +114,12 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
 
   void onSavePressed() async {
     Logger.showToast("3 onSavePressed: ");
-    final schedules = Hive.box('schedules');
-    //schedules.put('david', Schedule('david', 20, ['Tom', 'Ben']);
+    final schedules = Hive.box<Schedule>('schedules');
+    Schedule schedule = Schedule(id!, content, selectedDate!, startTime, endTime);
+    schedules.put(12,schedule);
+    Schedule? returnSchedule = schedules.get(["id"]);
+    Logger.showToast("4 onSavePressed: ");
+    Logger.showToast("5 final: $returnSchedule.id");
       // Navigator.of(context).pop();
 
 

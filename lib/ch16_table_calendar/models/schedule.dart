@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 part 'schedule.g.dart';
 
 @HiveType(typeId: 0)
-class Schedule {
+class Schedule extends HiveObject{
   @HiveField(0)
   int id;
   @HiveField(1)
