@@ -56,6 +56,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                         isTime: true,
                         onSaved: (String? val) {
                           // 저장이 실행되면 startTime 변수에 텍스트 필드 값 저장
+                          // Logger.showToast(" ### startTime ### $val");
                           startTime = int.parse(val!);
 
                         },
@@ -70,6 +71,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                         isTime: true,
                         onSaved: (String? val) {
                           // 저장이 실행되면 endTime 변수에 텍스트 필드 값 저장
+                          // Logger.showToast(" ### endTime ### $val");
                           endTime = int.parse(val!);
                         },
                         validator: Validator.time,
@@ -85,7 +87,9 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     isTime: false,
                     onSaved: (String? val) {
                       // 저장이 실행되면 content 변수에 텍스트 필드 값 저장
+                      // Logger.showToast(" ### content before ### $val");
                       content = val!;
+                      // Logger.showToast(" ### content after ### $content");
                     },
                     validator: Validator.content,
                   ),
