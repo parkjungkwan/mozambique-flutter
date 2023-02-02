@@ -109,10 +109,11 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   }
 
   void onSavePressed() async {
+    Logger.showToast("3 onSavePressed: ");
     final schedules = Hive.box('schedules');
     //schedules.put('david', Schedule('david', 20, ['Tom', 'Ben']);
       // Navigator.of(context).pop();
-    Logger.showToast("3 onSavePressed: ");
+
 
   }
 
