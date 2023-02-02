@@ -8,8 +8,10 @@ import '../components/today_banner.dart';
 import '../constants/colors.dart';
 
 
-class TableCalendar extends StatefulWidget {  // ➊ StatelessWidget에서 StatefulWidget으로 전환
-  const TableCalendar({Key? key}) : super(key: key);
+class TableCalendar extends StatefulWidget {
+  const TableCalendar({super.key});
+  // ➊ StatelessWidget에서 StatefulWidget으로 전환
+
 
   @override
   State<TableCalendar> createState() => _TableCalendarState();
@@ -28,11 +30,12 @@ class _TableCalendarState extends State<TableCalendar> {
       floatingActionButton: FloatingActionButton(  // ➊ 새 일정 버튼
         backgroundColor: PRIMARY_COLOR,
         onPressed: () {
+          Logger.showToast("onPressed: ");
           showModalBottomSheet(  // ➋ BottomSheet 열기
             context: context,
             isDismissible: true,  // ➌ 배경 탭했을 때 BottomSheet 닫기
             isScrollControlled: true,
-            builder: (_) => const ScheduleBottomSheet(),
+            builder: (_) => ScheduleBottomSheet(selectedDate: selectedDate),
           );
         },
         child: Icon(
@@ -67,7 +70,7 @@ class _TableCalendarState extends State<TableCalendar> {
 
   void onDaySelected(DateTime selectedDate, DateTime focusedDate){
     // ➌ 날짜 선택될 때마다 실행할 함수
-    Logger.showToast("토스트 테스트");
+    Logger.showToast(" 1 onDaySelected ");
     setState(() {
       this.selectedDate = selectedDate;
     });
