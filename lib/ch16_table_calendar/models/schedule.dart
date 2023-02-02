@@ -1,13 +1,19 @@
-import 'package:drift/drift.dart';
+import 'package:hive/hive.dart';
 
-class Schedules extends Table {
-  IntColumn get id => integer().autoIncrement()(); // ❶ PRIMARY KEY, 정수 열
+part 'schedule.g.dart';
 
-  TextColumn get content => text()();       // ❷ 내용, 글자 열
+@HiveType(typeId: 0)
+class Schedule {
+  @HiveField(0)
+  int id;
+  @HiveField(1)
+  String content;
+  @HiveField(2)
+  DateTime date;  // ❸ 일정 날짜, 날짜 열
+  @HiveField(3)
+  int startTime;   // 시작 시간
+  @HiveField(4)
+  int endTime;     // 종료 시간
 
-  DateTimeColumn get date => dateTime()();  // ❸ 일정 날짜, 날짜 열
-
-  IntColumn get startTime => integer()();   // 시작 시간
-
-  IntColumn get endTime => integer()();     // 종료 시간
+  Schedule(this.id, this.content, this.date, this.startTime, this.endTime);
 }

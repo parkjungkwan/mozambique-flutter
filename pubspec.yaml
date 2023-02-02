@@ -40,6 +40,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: 4.0.6
   drift: 2.5.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   iamport_flutter: ^0.10.0
   image_picker: ^0.8.5+3
   image_gallery_saver: ^1.7.1
@@ -60,8 +62,6 @@ dependencies:
   permission_handler: 10.0.2
   provider: ^6.0.5
   shake: ^2.1.0
-  sqflite: ^2.1.0
-  sqlite3_flutter_libs: 0.5.10
   table_calendar: 3.0.7
   uuid: ^3.0.7
   video_player: ^2.4.6
@@ -80,6 +80,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   drift_dev: ^2.1.0  #// ➊
   build_runner: ^2.2.0  #// ➋
+  hive_generator: ^2.0.0
 
 
 
