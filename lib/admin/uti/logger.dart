@@ -9,10 +9,4 @@ class Logger {
     toastLength: Toast.LENGTH_LONG,
     gravity: ToastGravity.BOTTOM);
   }
-  static int selectedDateCounter(DateTime selectedDate){
-    Box<Schedule> schedules = Hive.box<Schedule>("schedulers");
-    schedules.values.where((schedule) => schedule.date == selectedDate)
-        .toList();
-    return 0;
-  }
 }

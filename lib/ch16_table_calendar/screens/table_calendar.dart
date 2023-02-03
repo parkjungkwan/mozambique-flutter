@@ -26,7 +26,6 @@ class _TableCalendarState extends State<TableCalendar> {
     DateTime.now().month,
     DateTime.now().day,
   );
-  int count = Hive.box<Schedule>('schedules').length;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,9 @@ class _TableCalendarState extends State<TableCalendar> {
             SizedBox(height: 8.0),
             TodayBanner(  // ➊ 배너 추가하기
               selectedDate: selectedDate,
-              count: count,
+              count: Hive.box<Schedule>("schedules")
+                        .values.where((schedule) => schedule.date == selectedDate)
+                        .toList().length,
             ),
             SizedBox(height: 8.0),
             ScheduleCard(  // ➊ 구현해둔 일정 카드
