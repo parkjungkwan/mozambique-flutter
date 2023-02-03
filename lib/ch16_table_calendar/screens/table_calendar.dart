@@ -196,32 +196,46 @@ class _TableCalendarState extends State<TableCalendar> {
                 style: TextStyle(fontSize: 30),
               ),
             )
-                :Card(
-              color: Colors.orange.shade100,
-              margin: const EdgeInsets.all(10),
-              elevation: 3,
-              child: ListTile(
-                title: Text("Test"),
-                subtitle: Text("Sample"),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Edit button
-                    IconButton(
-                        icon: const Icon(Icons.edit),
-                        onPressed: () {
-                          Logger.showToast("수정 클릭");
-                        }),
-                    // Delete button
-                    IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: () {
-                        Logger.showToast("삭제 클릭");
-                      },
-                    ),
-                  ],
-                )),
-            )],
+                :
+            Container(
+              height: 400,
+              width: 400,
+              child:
+            ListView.builder(
+              // the list of items
+                itemCount: 4,
+                itemBuilder: (_, index) {
+                  final currentItem = _items[index];
+                  return
+                    Card(
+                      color: Colors.orange.shade100,
+                      margin: const EdgeInsets.all(10),
+                      elevation: 3,
+                      child: ListTile(
+                          title: Text("Test"),
+                          subtitle: Text("Sample"),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Edit button
+                              IconButton(
+                                  icon: const Icon(Icons.edit),
+                                  onPressed: () {
+                                    Logger.showToast("수정 클릭");
+                                  }),
+                              // Delete button
+                              IconButton(
+                                icon: const Icon(Icons.delete),
+                                onPressed: () {
+                                  Logger.showToast("삭제 클릭");
+                                },
+                              ),
+                            ],
+                          )),
+                    );
+                }
+            )
+          )],
         ),
       ),
     );
