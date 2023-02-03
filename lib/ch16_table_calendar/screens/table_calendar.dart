@@ -8,7 +8,7 @@ import '../components/schedule_card.dart';
 import '../components/today_banner.dart';
 import '../constants/colors.dart';
 import '../models/schedule.dart';
-
+//https://www.kindacode.com/article/flutter-hive-database/
 
 class TableCalendar extends StatefulWidget {
 
@@ -196,14 +196,32 @@ class _TableCalendarState extends State<TableCalendar> {
                 style: TextStyle(fontSize: 30),
               ),
             )
-                :
-            ScheduleCard(
-              // ➊ 구현해둔 일정 카드
-              startTime: 12,
-              endTime: 14,
-              content: '프로그래밍 공부',
-            ),
-          ],
+                :Card(
+              color: Colors.orange.shade100,
+              margin: const EdgeInsets.all(10),
+              elevation: 3,
+              child: ListTile(
+                title: Text("Test"),
+                subtitle: Text("Sample"),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Edit button
+                    IconButton(
+                        icon: const Icon(Icons.edit),
+                        onPressed: () {
+                          Logger.showToast("수정 클릭");
+                        }),
+                    // Delete button
+                    IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        Logger.showToast("삭제 클릭");
+                      },
+                    ),
+                  ],
+                )),
+            )],
         ),
       ),
     );
