@@ -68,7 +68,6 @@ class _TableCalendarState extends State<TableCalendar> {
 
   void onDaySelected(DateTime selectedDate, DateTime focusedDate){
     // ➌ 날짜 선택될 때마다 실행할 함수
-    Logger.showToast(" 1 onDaySelected $selectedDate");
     setState(() {
       this.selectedDate = selectedDate;
     });

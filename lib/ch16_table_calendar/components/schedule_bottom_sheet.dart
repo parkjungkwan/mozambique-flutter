@@ -101,7 +101,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                     // ➌ [저장] 버튼
                     onPressed: onSavePressed,
                     style: ElevatedButton.styleFrom(
-                      primary: PRIMARY_COLOR,
+                      backgroundColor: PRIMARY_COLOR,
                     ),
                     child: Text('저장'),
                   ),
@@ -115,19 +115,14 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   }
 
   void onSavePressed() async {
-    Logger.showToast("3 onSavePressed: ");
     formKey.currentState!.save();
     final schedules = Hive.box<Schedule>('schedules');
     String temp = const Uuid().v4();
-    Logger.showToast("4 ID: $temp");
     Schedule schedule = Schedule(temp, content!, widget.selectedDate, startTime!, endTime!);
     schedules.put(temp,schedule);
     final Schedule? returnSchedule = schedules.get(temp);
     final String res = returnSchedule.toString();
-    Logger.showToast("5 final: $res");
-      // Navigator.of(context).pop();
-
-
+    Logger.showToast("Final Result: $res");
+    Navigator.of(context).pop();
   }
-
 }
