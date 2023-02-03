@@ -9,10 +9,10 @@ class Logger {
     toastLength: Toast.LENGTH_LONG,
     gravity: ToastGravity.BOTTOM);
   }
-  static int countfilter(){
+  static int selectedDateCounter(DateTime selectedDate){
     Box<Schedule> schedules = Hive.box<Schedule>("schedulers");
-    schedules.values.where((shedule) => shedule.date == 1)
-        .forEach((item) => print('All First Value Data Showing Result'));
+    schedules.values.where((schedule) => schedule.date == selectedDate)
+        .forEach((schedule) => print('All First Value Data Showing Result'));
     return 0;
   }
 }
