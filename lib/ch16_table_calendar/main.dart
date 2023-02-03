@@ -13,6 +13,7 @@ void main() async {
   // 어답터 등록하기
   Hive.registerAdapter<Schedule>(ScheduleAdapter());
   await Hive.openBox<Schedule>('schedules');
+
   runApp(
     MaterialApp(
       home: TableCalendar(),

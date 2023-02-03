@@ -30,7 +30,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   @override
   Widget build(BuildContext context) {
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
-    Logger.showToast("2 ScheduleBottomSheet: ");
+
 
     return Form(
       // ➊ 텍스트 필드를 한 번에 관리할 수 있는 폼

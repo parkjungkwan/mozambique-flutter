@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import '../../admin/uti/logger.dart';
 import '../components/main_calendar.dart';
@@ -6,10 +7,13 @@ import '../components/schedule_bottom_sheet.dart';
 import '../components/schedule_card.dart';
 import '../components/today_banner.dart';
 import '../constants/colors.dart';
+import '../models/schedule.dart';
 
 
 class TableCalendar extends StatefulWidget {
+
   const TableCalendar({super.key});
+
   // ➊ StatelessWidget에서 StatefulWidget으로 전환
 
   @override
@@ -22,9 +26,12 @@ class _TableCalendarState extends State<TableCalendar> {
     DateTime.now().month,
     DateTime.now().day,
   );
+  int count = Hive.box<Schedule>('schedules').length;
 
   @override
   Widget build(BuildContext context) {
+    Logger.showToast("Home start: ");
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(  // ➊ 새 일정 버튼
         backgroundColor: PRIMARY_COLOR,
@@ -52,7 +59,7 @@ class _TableCalendarState extends State<TableCalendar> {
             SizedBox(height: 8.0),
             TodayBanner(  // ➊ 배너 추가하기
               selectedDate: selectedDate,
-              count: 0,
+              count: count,
             ),
             SizedBox(height: 8.0),
             ScheduleCard(  // ➊ 구현해둔 일정 카드
