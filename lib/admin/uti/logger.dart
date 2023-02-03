@@ -12,7 +12,7 @@ class Logger {
   static int selectedDateCounter(DateTime selectedDate){
     Box<Schedule> schedules = Hive.box<Schedule>("schedulers");
     schedules.values.where((schedule) => schedule.date == selectedDate)
-        .forEach((schedule) => print('All First Value Data Showing Result'));
+        .toList();
     return 0;
   }
 }
