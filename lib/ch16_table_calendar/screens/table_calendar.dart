@@ -189,7 +189,16 @@ class _TableCalendarState extends State<TableCalendar> {
                   .toList().length,
             ),
             SizedBox(height: 8.0),
-            ScheduleCard(  // ➊ 구현해둔 일정 카드
+            _items.isEmpty
+                ? const Center(
+              child: Text(
+                'No Data',
+                style: TextStyle(fontSize: 30),
+              ),
+            )
+                :
+            ScheduleCard(
+              // ➊ 구현해둔 일정 카드
               startTime: 12,
               endTime: 14,
               content: '프로그래밍 공부',
